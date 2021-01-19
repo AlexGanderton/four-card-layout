@@ -1,0 +1,137 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+$red: hsl(0, 78%, 62%);
+$cyan: hsl(180, 62%, 55%);
+$orange: hsl(34, 97%, 64%);
+$blue: hsl(212, 86%, 64%);
+
+$very-dark-blue: hsl(234, 12%, 34%);
+$grayish-blue: hsl(229, 6%, 66%);
+$very-light-gray: hsl(0, 0%, 98%);
+
+body {
+  margin: 4rem 2rem;
+  font-size: 15px;
+  background: $very-light-gray;
+}
+
+.top {
+    font-weight: 200;
+    color: $grayish-blue;
+    text-align: center;
+    font-size: 1.6rem;
+}
+
+.bottom {
+    font-weight: 600;
+    color: $very-dark-blue;
+    text-align: center;
+    font-size: 1.6rem;
+}
+
+.text {
+    font-weight: 200;
+    color: $grayish-blue;
+    text-align: center;
+    margin: 1rem auto;
+    font-size: 1rem;
+    max-width: 680px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 3rem auto;
+
+    .card-1 {
+        border-color: $cyan;
+    }
+
+    .card-2 {
+        border-color: $red;
+    }
+
+    .card-3 {
+        border-color: $orange;
+    }
+
+    .card-4 {
+        border-color: $blue;
+    }
+}
+
+.card {
+    padding: 1.5rem;
+    width: 100%;
+    margin-top: 1.5rem;
+    box-shadow: 0 5px 20px 0px $grayish-blue;
+    border-radius: 5px;
+    border-top: 4px solid;
+
+    > h2 {
+        font-size: 1.3rem;
+        color: $very-dark-blue;
+    }
+
+    > p {
+        font-size: 0.85rem;
+        line-height: 1.8;
+        margin-top: 0.3rem;
+        color: $grayish-blue;
+        font-weight: 400;
+    }
+
+    > .image {
+        margin-top: 1.7rem;
+        text-align: right;
+    }
+}
+
+@media screen and (min-width: 470px) {
+    .top, .bottom {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .top, .bottom {
+        font-size: 2.5rem;
+    }
+    
+    .container {
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: repeat(2,1fr);
+        grid-gap: 1.5rem;
+        max-width: 1100px;
+        margin: 3rem auto;
+
+        > .card-1 {
+            grid-column-start: 1;
+            grid-column-end: 2;
+            grid-row-start: 1;
+            grid-row-end: 3;
+            align-self: center;
+        }
+
+        > .card-2 {
+            grid-column-start: 2;
+        }
+
+        > .card-3 {
+            grid-column-start: 2;
+        }
+
+        > .card-4 {
+            grid-column-start: 3;
+            grid-column-end: 4;
+            grid-row-start: 1;
+            grid-row-end: 3;
+            align-self: center;
+        }
+    }
+}
